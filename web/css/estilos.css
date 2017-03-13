@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/03/2017, 07:41:15 PM
+    Author     : emi
+*/
+
+body{
+    background-color: aquamarine;
+}
+
+#login{
+    text-align: center;
+
+    
+}
+#formulario{
+    margin: 0px auto;
+    border: 1px solid black;
+    width: 15%;
+    border-radius: 15px;
+    background-color: lightgray;
+}
+#Entrar{
+    background-color: blue;
+    color:white;
+}
