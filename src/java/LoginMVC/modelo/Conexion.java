@@ -14,10 +14,10 @@ import java.sql.SQLException;
  */
 public class Conexion {
     public static final String USERNAME = "root";
-    public static final String PASSWORD = "root";
+    public static final String PASSWORD = "macias";
     public static final String HOST ="localhost";
-    public static final String PORT = "3380";
-    public static final String DATABASE = "codigofacilito";
+    public static final String PORT = "3306";
+    public static final String DATABASE = "crm";
     public static final String CLASSNAME ="com.mysql.jdbc.Driver";
     public static final String URL="jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE;
     
@@ -32,5 +32,9 @@ public class Conexion {
        System.out.println("Error" + e);
     }
     }
- 
+    
+   public static void main(String[] args) throws SQLException {
+        Consultas con = new Consultas();
+        System.out.println(); 
+    }
 }

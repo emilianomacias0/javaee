@@ -21,15 +21,15 @@ public class Consultas extends Conexion {
        ResultSet rs = null;
        rs = st.executeQuery(Consulta);
        while(rs.next()){
-           if (user.equals(rs.getString("Usuario")) && pass.equals(rs.getString("Contrasena"))) {
+           if (user.equals(rs.getString("usuario")) && pass.equals(rs.getString("contrasena"))) {
                return true;
            }
         }
         return false;
     }
     
-    public static void main(String[] args) throws SQLException {
+    /*public static void main(String[] args) throws SQLException {
         Consultas con = new Consultas();
-        System.out.println(con.Autenticacion("", "")); 
-    }
+        System.out.println(con.Autenticacion("emiliano", "1234")); 
+    }*/
 }

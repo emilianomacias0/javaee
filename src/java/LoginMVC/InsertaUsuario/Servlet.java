@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LoginMVC.Servlets;
+package LoginMVC.InsertaUsuario;
 
-import LoginMVC.modelo.Consultas;
+import LoginMVC.modelo.Inserts;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author emi
  */
-public class Validacion extends HttpServlet {
+public class Servlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,24 +34,16 @@ public class Validacion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-       String user = request.getParameter("user");
+      String user = request.getParameter("user");
        String pass = request.getParameter("pass");
-       
-       Consultas con = new Consultas();
-       boolean valido = con.Autenticacion(user, pass);
-       request.setAttribute("nombre", user);
-       request.setAttribute("pass", pass);
-        RequestDispatcher rd = getServletContext()
-                               .getRequestDispatcher("/inicio.jsp");
-    rd.forward(request, response);
-       
-        if (valido) {
-            
-          response.sendRedirect("inicio.jsp");
+       String nombre = request.getParameter("nombre");
+       Inserts insert = new Inserts();
+       boolean insertando = insert.InsertaUsuario(nombre, user, pass);
+        if (insertando) {
+            response.sendRedirect("index.jsp");
         }else{
-         response.sendRedirect("index.jsp");
+            response.sendRedirect("index.jsp");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -70,7 +61,7 @@ public class Validacion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -88,7 +79,7 @@ public class Validacion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Validacion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Servlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 12/03/2017, 07:37:29 PM
+    Document   : registro
+    Created on : 13/03/2017, 09:22:48 PM
     Author     : emi
 --%>
 
@@ -16,13 +16,13 @@
     <body>
         <h1>Bienvenido!</h1>
         <div id="login">
-            <p>Entrar</p>
-            <form action="Autenticacion" method="post" id="formulario">
-                <p><input type="text" name="user" id="user" /></p>
-                <p><input type="password" name="pass" id="pass" /></p>
+            <p>Registrate</p>
+            <form action="Inserta" method="post" id="formulario">
+                <p><input type="text" name="user" id="user" placeholder="Usuario"/></p>
+                <p><input type="text" name="nombre" id="nombre" placeholder="Nombre"/></p>
+                <p><input type="password" name="pass" id="pass" placeholder="contraseña" /></p>
                 <p><input type="submit" name="Entrar" id="Entrar" value="entrar" /></p>
             </form>
-            <a href="registro.jsp">Registrate</a>
         </div>
     </body>
 </html>

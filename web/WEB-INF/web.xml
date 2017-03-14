@@ -4,9 +4,17 @@
         <servlet-name>Validacion</servlet-name>
         <servlet-class>LoginMVC.Servlets.Validacion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Inserta</servlet-name>
+        <servlet-class>LoginMVC.InsertaUsuario.Servlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Validacion</servlet-name>
         <url-pattern>/Autenticacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inserta</servlet-name>
+        <url-pattern>/Inserta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
